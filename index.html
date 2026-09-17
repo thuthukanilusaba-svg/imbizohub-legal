@@ -4,87 +4,65 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ImbizoHub</title>
+<meta name="theme-color" content="#FCF9F2" />
+<meta name="description" content="Buy and sell with confidence in Zimbabwe. Chat, meet, and pay — backed by PIN-confirmed handovers and ratings from real completed deals." />
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #f5f6fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
+  :root{
+    --bg:#FCF9F2; --panel:#FFFFFF; --panel-2:#F4EFE3; --line:#E4DCCB;
+    --gold:#8A6608; --text:#1A1A18; --muted:#5C574B;
   }
-  .card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    padding: 44px 36px;
-    max-width: 420px;
-    width: 100%;
-    text-align: center;
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text);
+    display:flex; align-items:center; justify-content:center;
+    min-height:100vh; padding:20px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
-  h1 {
-    font-size: 30px;
-    margin: 0 0 8px;
-    color: #1a1a2e;
+  .card{
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:16px; box-shadow:0 2px 20px rgba(26,26,24,.06);
+    padding:44px 36px; max-width:430px; width:100%; text-align:center;
   }
-  p.subtitle {
-    color: #666;
-    font-size: 15px;
-    margin: 0 0 32px;
-    line-height: 1.5;
+  h1{font-size:31px; margin:0 0 10px; color:var(--gold); letter-spacing:-.02em}
+  p.subtitle{color:var(--muted); font-size:15px; margin:0 0 30px}
+  a.button{
+    display:block; width:100%; padding:14px;
+    background:var(--gold); color:#fff; text-decoration:none;
+    border-radius:12px; font-size:15px; font-weight:700; margin-bottom:12px;
   }
-  a.button {
-    display: block;
-    width: 100%;
-    padding: 13px;
-    background: #5b5bf0;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 12px;
+  a.button:hover{background:#6f5206}
+  .note{color:var(--muted); font-size:13px; margin:0}
+  .links{
+    margin-top:28px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:13px; color:var(--muted);
   }
-  a.button.secondary {
-    background: #fff;
-    color: #5b5bf0;
-    border: 1px solid #d8d8e0;
-  }
-  .links {
-    margin-top: 28px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    font-size: 13px;
-    color: #999;
-  }
-  .links a {
-    color: #999;
-    text-decoration: none;
-    margin: 0 8px;
-  }
-  .links a:hover {
-    color: #5b5bf0;
-  }
-  .brand {
-    font-weight: 700;
-    color: #5b5bf0;
-  }
+  .links a{color:var(--muted); text-decoration:none; margin:0 7px}
+  .links a:hover{color:var(--gold)}
 </style>
 </head>
 <body>
   <div class="card">
-    <h1><span class="brand">ImbizoHub</span></h1>
-    <p class="subtitle">Buy and sell with confidence. Chat, meet, and pay — all backed by verified handovers and real ratings.</p>
+    <h1>ImbizoHub</h1>
+    <p class="subtitle">
+      Buy and sell with confidence in Zimbabwe. Chat, meet, and pay — backed by
+      PIN-confirmed handovers and ratings from real completed deals.
+    </p>
 
-    <!-- Once your Play Store listing is live, update this link -->
-    <a class="button" href="#">Get it on Google Play</a>
+    <!-- The Play Store URL is built from the package name in app.json
+         (com.imbizohub.app), so it is fixed and correct before publication.
+         It 404s until the production release goes live, then resolves with
+         no change needed here. -->
+    <a class="button" href="https://play.google.com/store/apps/details?id=com.imbizohub.app">
+      Get it on Google Play
+    </a>
+    <p class="note">Free to download. Free to buy and sell.</p>
 
     <div class="links">
-      <a href="privacy-policy.html">Privacy Policy</a>
-      ·
+      <a href="https://imbizohub.com/">Website</a> ·
+      <a href="privacy-policy.html">Privacy Policy</a> ·
+      <a href="terms-of-service.html">Terms</a> ·
       <a href="delete-account.html">Delete Account</a>
     </div>
   </div>
