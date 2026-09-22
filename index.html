@@ -27,13 +27,15 @@
   }
   h1{font-size:31px; margin:0 0 10px; color:var(--gold); letter-spacing:-.02em}
   p.subtitle{color:var(--muted); font-size:15px; margin:0 0 30px}
-  a.button{
-    display:block; width:100%; padding:14px;
-    background:var(--gold); color:#fff; text-decoration:none;
-    border-radius:12px; font-size:15px; font-weight:700; margin-bottom:12px;
-  }
-  a.button:hover{background:#6f5206}
+  /* The badge is an image link, not a button — no background, border or
+     padding of ours may touch it. Centred rather than full-width, since
+     stretching it would mean distorting artwork we are not allowed to
+     alter. */
+  a.badge-link{display:inline-flex;align-items:center;line-height:0;margin-bottom:12px}
+  a.badge-link:hover{opacity:.88}
+  .badge-img{height:53px;width:auto;display:block}
   .note{color:var(--muted); font-size:13px; margin:0}
+  .trademark{color:#918A7B; font-size:11.5px; line-height:1.5; margin:14px 0 0}
   .links{
     margin-top:28px; padding-top:20px; border-top:1px solid var(--line);
     font-size:13px; color:var(--muted);
@@ -50,14 +52,29 @@
       PIN-confirmed handovers and ratings from real completed deals.
     </p>
 
-    <!-- The Play Store URL is built from the package name in app.json
-         (com.imbizohub.app), so it is fixed and correct before publication.
-         It 404s until the production release goes live, then resolves with
-         no change needed here. -->
-    <a class="button" href="https://play.google.com/store/apps/details?id=com.imbizohub.app">
-      Get it on Google Play
+    <!-- Google's own artwork, unmodified, as their brand guidelines
+         require: no recolouring, no cropping, no CSS rebuild. The gold
+         pill this replaced was a button of ours wearing Google's words,
+         which is exactly what those guidelines forbid.
+
+         The SVG is committed to THIS repo rather than linked from
+         imbizohub.com. A cross-origin hotlink would put a second domain
+         in the critical path of the one thing this page exists to do,
+         and this site is served by GitHub Pages independently of the
+         Vercel deployment.
+
+         Sized by height so the SVG scales on its own 238.96 x 70.87
+         ratio. 53px clears Google's 40px web minimum. -->
+    <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.imbizohub.app"
+       aria-label="Get ImbizoHub on Google Play">
+      <img class="badge-img" src="GetItOnGooglePlay_Badge_Web_color_English.svg"
+           alt="Get it on Google Play" width="180" height="53">
     </a>
     <p class="note">Free to download. Free to buy and sell.</p>
+
+    <!-- Required by Google's brand guidelines wherever the Play badge
+         is used. Easy to skip, and skipping it is a guideline breach. -->
+    <p class="trademark">Google Play and the Google Play logo are trademarks of Google LLC.</p>
 
     <div class="links">
       <a href="https://imbizohub.com/">Website</a> ·
